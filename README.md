@@ -15,7 +15,7 @@ vue轮子
 
 #### 使用说明
 
-1. xxxx
+1. 请在css中开启 border-box
 2. xxxx
 3. xxxx
 
