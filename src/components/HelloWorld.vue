@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>{{ value1 }}</h2>
-    <XInput :value="value1" 
+    <XInput :value="value1"
     @change="inputChange"
     @input="inputHandle"
     @blur="inputBlur"
@@ -11,12 +11,48 @@
     <XInput value="李四" disabled/>
     <XInput value="李四a" readonly/>
     <XInput value="121" error="姓名不能为空"/>
+
+    <!-- <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div> -->
+
+    <x-rol gutter="30">
+      <x-col span="4">
+        <div class="donten"></div>
+      </x-col>
+      <x-col span="20">
+        <div class="donten"></div>
+      </x-col>
+    </x-rol>
+    <x-rol gutter="20">
+      <x-col span="6">
+        <div class="donten"></div>
+      </x-col>
+      <x-col span="6">
+        <div class="donten"></div>
+      </x-col>
+      <x-col span="6">
+        <div class="donten"></div>
+      </x-col>
+      <x-col span="6">
+        <div class="donten"></div>
+      </x-col>
+     </x-rol>
   </div>
 </template>
 
 <script>
 import XButton from './button/button'
 import XInput from './input/input'
+import XCol from './row/col'
+import XRol from './row/row'
 
 export default {
   name: 'HelloWorld',
@@ -29,7 +65,9 @@ export default {
   },
   components: {
     XButton,
-    XInput
+    XInput,
+    XCol,
+    XRol
   },
   methods: {
     inputChange(e) {
@@ -52,8 +90,14 @@ export default {
 }
 </script>
 
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 h1, h2 {
   font-weight: normal;
 }
@@ -67,5 +111,14 @@ li {
 }
 a {
   color: #42b983;
+}
+.donten{
+  width: 100%;
+  height: 100%;
+  background: red;
+  border-radius: 5px;
+}
+.row{
+  margin-bottom: 20px;
 }
 </style>
