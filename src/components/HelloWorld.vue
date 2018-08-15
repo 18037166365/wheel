@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>{{ value1 }}</h2>
+
+    <!-- INPUT -->
+    <!-- <h2>{{ value1 }}</h2>
     <XInput :value="value1"
     @change="inputChange"
     @input="inputHandle"
@@ -10,41 +12,43 @@
     />
     <XInput value="李四" disabled/>
     <XInput value="李四a" readonly/>
-    <XInput value="121" error="姓名不能为空"/>
+    <XInput value="121" error="姓名不能为空"/> -->
 
-    <!-- <div class="row">
-      <div class="col"></div>
-      <div class="col"></div>
+    <!-- COL=ROL -->
+    <div style="width: 100%;">
+      <x-rol gutter="30">
+        <x-col span="12"
+        :ipad="{span: 8}"
+        :narrow-pc="{span: 4}"
+        :pc="{span: 2}"
+        :wide-pc="{span: 1}"
+        >
+          <div class="donten"></div>
+        </x-col>
+        <x-col span="12"
+          :ipad="{span: 16}"
+          :narrow-pc="{span: 20}"
+          :pc="{span: 22}"
+          :wide-pc="{span: 23}"
+         >
+          <div class="donten"></div>
+        </x-col>
+      </x-rol>
+      <x-rol gutter="20">
+        <x-col span="6">
+          <div class="donten"></div>
+        </x-col>
+        <x-col span="6">
+          <div class="donten"></div>
+        </x-col>
+        <x-col span="6">
+          <div class="donten"></div>
+        </x-col>
+        <x-col span="6">
+          <div class="donten"></div>
+        </x-col>
+      </x-rol>
     </div>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-    </div> -->
-
-    <x-rol gutter="30">
-      <x-col span="4">
-        <div class="donten"></div>
-      </x-col>
-      <x-col span="20">
-        <div class="donten"></div>
-      </x-col>
-    </x-rol>
-    <x-rol gutter="20">
-      <x-col span="6">
-        <div class="donten"></div>
-      </x-col>
-      <x-col span="6">
-        <div class="donten"></div>
-      </x-col>
-      <x-col span="6">
-        <div class="donten"></div>
-      </x-col>
-      <x-col span="6">
-        <div class="donten"></div>
-      </x-col>
-     </x-rol>
   </div>
 </template>
 
@@ -58,8 +62,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'hello world',
-      msg1: "hello world",
+      msg: 'To build the wheels',
       value1: '张三a'
     }
   },

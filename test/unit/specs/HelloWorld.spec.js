@@ -70,16 +70,16 @@ describe('Input', ()=> {
     vm.$destroy()
   })
 
-  it('支持inputChange ', ()=> {
-    const Constructor = Vue.extend(Input)
-    const vm = new Constructor({}).$mount()
-    const callBack = sinon.fake();
-    vm.$on('change', callBack)
+  // it('支持inputChange ', ()=> {
+  //   const Constructor = Vue.extend(Input)
+  //   const vm = new Constructor({}).$mount()
+  //   const callBack = sinon.fake();
+  //   vm.$on('change', callBack)
 
-    let event = new Event('change')
-    let inputElement = vm.$el.querySelector('input')
-    inputElement.dispatchEvent(event)
-    expect(callBack).to.have.been.calledWith(event)
-    vm.$destroy()
-  })
+  //   let event = new Event('change')
+  //   let inputElement = vm.$el.querySelector('input')
+  //   inputElement.dispatchEvent(event)
+  //   expect(callBack).to.have.been.calledWith(event)
+  //   vm.$destroy()
+  // })
 })
