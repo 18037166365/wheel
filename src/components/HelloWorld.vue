@@ -15,7 +15,7 @@
     <XInput value="121" error="姓名不能为空"/> -->
 
     <!-- COL=ROL -->
-    <div style="width: 100%;">
+    <!-- <div style="width: 100%;">
       <x-rol gutter="30">
         <x-col span="12"
         :ipad="{span: 8}"
@@ -48,7 +48,20 @@
           <div class="donten"></div>
         </x-col>
       </x-rol>
-    </div>
+    </div> -->
+
+    <!-- 布局 -->
+    <!-- <x-layout>
+      <x-header class="demo"></x-header>
+      <x-layout class="demo">
+        <x-sider class="demo"></x-sider>
+        <x-content class="demo"></x-content>
+      </x-layout> 
+      <x-content class="demo"></x-content>
+      <x-footer class="demo"></x-footer>
+    </x-layout> -->
+
+    
   </div>
 </template>
 
@@ -57,6 +70,11 @@ import XButton from './button/button'
 import XInput from './input/input'
 import XCol from './row/col'
 import XRol from './row/row'
+import XLayout from './layout/layout'
+import XHeader from './layout/header'
+import XFooter from './layout/footer'
+import XSider from './layout/sider'
+import XContent from './layout/content'
 
 export default {
   name: 'HelloWorld',
@@ -70,7 +88,12 @@ export default {
     XButton,
     XInput,
     XCol,
-    XRol
+    XRol,
+    XContent,
+    XSider,
+    XFooter,
+    XHeader,
+    XLayout
   },
   methods: {
     inputChange(e) {
@@ -93,7 +116,25 @@ export default {
 }
 </script>
 
+<style scoped lang="scss">
+.demo{
+  min-height: 100px;
+  border: 1px solid gray;
+}
+.slider{
+    background: #333; 
+    width: 200px;
+}
+.header{
+  background: #999;
+  height: 100px;
+}
+.footer{
+  background: #ccc;
+  height: 100px;
+}
 
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 *{

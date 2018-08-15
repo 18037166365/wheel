@@ -57,4 +57,5 @@ describe('Col', ()=> {
     vm.$el.remove()
     vm.$destroy()                          
   })
-})
+}) 
+ 
