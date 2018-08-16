@@ -16,8 +16,8 @@
       align: {
         type: String,
         default: 'left',
-        validator(v){
-          return ['left', 'right', 'center'].includes(v)
+        validator(value){
+          return ['left', 'right', 'center'].indexOf(value)>=0
         }
       }
     },

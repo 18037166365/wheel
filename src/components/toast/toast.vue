@@ -1,6 +1,6 @@
 <template>
   <div class="toastWrap">
-    <div class="toastContent" ref="wrapper">
+    <div class="toastContent" ref="wrapper" :class="tostClasses">
        <slot v-if="!enableHtml"></slot>
        <span v-if="enableHtml" v-html="$slots.default[0]"></span>
        <!-- <div class="line"></div> -->
@@ -27,6 +27,13 @@
         type: Number,
         default: 1
       },
+      position: {
+        type: String,
+        validator(value){
+           return ['top', 'bottom', 'middle'].indexOf(value)>=0
+        },
+        default: 'middle'
+      },
       closeButton: {
         type: Object,
         default(){
@@ -41,9 +48,15 @@
         default: false
       }
     },
+    computed: {
+      tostClasses() {
+        return `toast-position-${this.position}`
+      }
+    },
     methods: {
       close() {
         this.$el.remove()
+        this.$emit('close')
         this.$destroy()
       },
       closeButtonHandle() {
@@ -80,13 +93,28 @@
 $toast-bg: rgba(0,0,0,.75);
 $font-size: 14px;
 $toast-height: 40px;
+$animation-duration: 500ms;
 
+
+@keyframes fadeIn {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes slideTop {
+  0%{transform: translateY(100%)}
+  100%{transform: translateY(0%)}
+}
+
+@keyframes slideBottom {
+  0%{transform: translateY(-100%)}
+  100%{transform: translateY(0%)}
+}
 .toastWrap {
   .toastContent {
+    animation: fade 1s;
     position: fixed;
-    top: 0;
     left: 50%;
-    transform: translateX(-50%);
     display: flex;
     min-height: $toast-height;
     background: $toast-bg;
@@ -94,23 +122,42 @@ $toast-height: 40px;
     padding: 5px 10px;
     font-size: $font-size;
     color: #fff;
-    // .line {
-    //   height: 100%;
-    //   border-left: 1px splid #666;
-    //   margin: 0 10px;
-    //   display: inline-block;
-    // }
+    align-items: center;
     .closeButton{
       flex-shrink: 0;
       display: flex;
       align-items: center;
+      flex-grow: 1;
+      justify-content: flex-end;
       &::before{
         content: " ";
         height: 100%;
-        border-left: 1px solid #999;
+        border-right: 1px solid #999;
         margin: 0 5px;
-        padding: 2.5px 0;
+        padding: 2.5px;
       }
+    }
+    &.toast-position-bottom{
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      border-radius: 0;
+      animation: slideTop $animation-duration;
+
+    }
+    &.toast-position-top{
+      top: 0;
+      width: 100%;
+      left: 0;
+      border-radius: 0;
+      animation: slideBottom $animation-duration;
+    }
+    &.toast-position-middle{
+      animation: fadeIn $animation-duration;
+      max-width: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }

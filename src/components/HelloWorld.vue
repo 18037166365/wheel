@@ -102,13 +102,14 @@ export default {
   },
   methods: {
     openToast(){
-      this.$toast('msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>', {
+      this.$toast('hello world ', {
         closeButton: {
           text: '关闭',
           callBack(toast) {//可以调用toast组件实例
             console.log('关闭callBack')
           }
         },
+        position: 'top',
         autoClose: false,
         autoCloseDelay: 4,
         enableHtml: false
