@@ -56,12 +56,15 @@
       <x-layout class="demo">
         <x-sider class="demo"></x-sider>
         <x-content class="demo"></x-content>
-      </x-layout> 
+      </x-layout>
       <x-content class="demo"></x-content>
       <x-footer class="demo"></x-footer>
     </x-layout> -->
 
-    
+
+    <XButton @click="openToast">open</XButton>
+
+
   </div>
 </template>
 
@@ -75,6 +78,7 @@ import XHeader from './layout/header'
 import XFooter from './layout/footer'
 import XSider from './layout/sider'
 import XContent from './layout/content'
+import XToast from './toast/toast'
 
 export default {
   name: 'HelloWorld',
@@ -93,9 +97,23 @@ export default {
     XSider,
     XFooter,
     XHeader,
-    XLayout
+    XLayout,
+    XToast
   },
   methods: {
+    openToast(){
+      this.$toast('msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>msg<b>加粗</b>', {
+        closeButton: {
+          text: '关闭',
+          callBack(toast) {//可以调用toast组件实例
+            console.log('关闭callBack')
+          }
+        },
+        autoClose: false,
+        autoCloseDelay: 4,
+        enableHtml: false
+      })
+    },
     inputChange(e) {
       console.log('inputChange', e)
       this.value1 = e.target.value
@@ -112,6 +130,9 @@ export default {
       console.log('inputHandle', e)
       // this.value1 = e.target.value
     },
+  },
+  mounted(){
+
   }
 }
 </script>
@@ -122,7 +143,7 @@ export default {
   border: 1px solid gray;
 }
 .slider{
-    background: #333; 
+    background: #333;
     width: 200px;
 }
 .header{
