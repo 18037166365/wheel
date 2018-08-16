@@ -20,12 +20,11 @@
     name: 'x-toast',
     props: {
       autoClose: {
-        type: Boolean,
-        default: true
-      },
-      autoCloseDelay: {
-        type: Number,
-        default: 1
+        type: [Number, Boolean],
+        default: 1,
+        validator(value) {
+          return typeof value === 'boolean' || typeof value === 'number'
+        }
       },
       position: {
         type: String,
@@ -66,11 +65,15 @@
         }
       },
       exexAutoClose() {
-        if(this.autoClose) {
-          setTimeout(()=>{
-            this.close()
-          },this.autoCloseDelay*1000)
+        let delay;
+        if(typeof this.autoClose ==='number') {
+          delay = this.autoClose
+        }else {
+          delay = 1.5
         }
+        setTimeout(()=>{
+            this.close()
+          }, delay*1000)
       },
       updateStyles() {
         this.$nextTick(()=>{
@@ -130,7 +133,7 @@ $animation-duration: 500ms;
       flex-grow: 1;
       justify-content: flex-end;
       &::before{
-        content: " ";
+        content: "";
         height: 100%;
         border-right: 1px solid #999;
         margin: 0 5px;

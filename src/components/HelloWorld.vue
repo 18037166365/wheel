@@ -110,8 +110,7 @@ export default {
           }
         },
         position: 'top',
-        autoClose: false,
-        autoCloseDelay: 4,
+        autoClose: true,//默认为1.5s
         enableHtml: false
       })
     },
