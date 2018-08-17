@@ -36,7 +36,7 @@ describe('Row', ()=> {
       expect(window.getComputedStyle(row).marginRight).to.eq('-10px')
       expect(window.getComputedStyle(cols[0]).paddingRight).to.eq('10px')
       expect(window.getComputedStyle(cols[1]).paddingLeft).to.eq('10px')
-      done() 
+      done()
       vm.$el.remove()
       vm.$destroy()
     },0)
@@ -53,7 +53,7 @@ describe('Row', ()=> {
     }).$mount(div)
     const element = vm.$el
     expect(getComputedStyle(element).justifyContent).to.eq('flex-end')
-     vm.$destroy()                          
+     vm.$destroy()
   })
 
 })

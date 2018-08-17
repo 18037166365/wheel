@@ -15,7 +15,7 @@
     <XInput value="121" error="姓名不能为空"/> -->
 
     <!-- COL=ROL -->
-    <!-- <div style="width: 100%;">
+    <div style="width: 100%;">
       <x-rol gutter="30">
         <x-col span="12"
         :ipad="{span: 8}"
@@ -48,7 +48,7 @@
           <div class="donten"></div>
         </x-col>
       </x-rol>
-    </div> -->
+    </div>
 
     <!-- 布局 -->
     <!-- <x-layout>
@@ -102,7 +102,7 @@ export default {
   },
   methods: {
     openToast(){
-      this.$toast('hello world ', {
+      this.$toast('hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world ', {
         closeButton: {
           text: '关闭',
           callBack(toast) {//可以调用toast组件实例

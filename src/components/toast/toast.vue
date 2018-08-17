@@ -86,7 +86,7 @@
     },
     mounted() {
       this.exexAutoClose()
-      this.updateStyles()
+      // this.updateStyles()
 
     }
   }
@@ -126,6 +126,7 @@ $animation-duration: 500ms;
     font-size: $font-size;
     color: #fff;
     align-items: center;
+    overflow: hidden;
     .closeButton{
       flex-shrink: 0;
       display: flex;
@@ -138,6 +139,7 @@ $animation-duration: 500ms;
         border-right: 1px solid #999;
         margin: 0 5px;
         padding: 2.5px;
+        transform: scaleY(999)
       }
     }
     &.toast-position-bottom{

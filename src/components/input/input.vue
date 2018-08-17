@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper" :class="{ error }">
     <input :value="value"
-     :disabled="disabled"  
-     :readonly="readonly" 
+     :disabled="disabled"
+     :readonly="readonly"
      @change="$emit('change', $event)"
      @input="$emit('change', $event)"
      @foucs="$emit('focus', $event)"
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import VIcon from '../icon/icon'
+import VIcon from '../icon/Icon'
 
   export default {
     nane: 'x-input',

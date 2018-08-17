@@ -21,7 +21,7 @@ describe('Col', ()=> {
     const element = vm.$el
     expect(element.classList.contains('col-1')).to.eq(true)
     vm.$el.remove()
-    vm.$destroy()                          
+    vm.$destroy()
   })
 
   it('接收offset', ()=>{
@@ -30,13 +30,13 @@ describe('Col', ()=> {
     document.body.appendChild(div)
     const vm = new Constructor({
       propsData: {
-        offset: 1 
+        offset: 1
       }
     }).$mount(div)
     const element = vm.$el
     expect(element.classList.contains('offset-1')).to.eq(true)
     vm.$el.remove()
-    vm.$destroy()                          
+    vm.$destroy()
   })
 
   it('接收pc', ()=>{
@@ -55,7 +55,6 @@ describe('Col', ()=> {
     expect(element.classList.contains('col-pc-1')).to.eq(true)
     expect(element.classList.contains('offset-pc-2')).to.eq(true)
     vm.$el.remove()
-    vm.$destroy()                          
+    vm.$destroy()
   })
-}) 
- 
+})

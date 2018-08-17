@@ -12,7 +12,7 @@
   </button> -->
 </template>
 <script>
-  import Icon from '../icon/icon'
+  import Icon from '../icon/Icon'
   export default {
     name: 'GuluButton',
     components: {
