@@ -13,8 +13,8 @@ module.exports = function karmaConfig (config) {
     // 2. add it to the `browsers` array below.
     // browsers: ['PhantomJS'],
     browsers: [
-      // 'ChromeHeadless'
-      'Chrome'
+      'ChromeHeadless'
+      // 'Chrome'
       ],
     frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
     reporters: ['spec', 'coverage'],

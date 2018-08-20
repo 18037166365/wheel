@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-
+    <!-- <XButton icon="settings">shehi</XButton> -->
     <!-- INPUT -->
     <!-- <h2>{{ value1 }}</h2>
     <XInput :value="value1"
@@ -15,7 +15,7 @@
     <XInput value="121" error="姓名不能为空"/> -->
 
     <!-- COL=ROL -->
-    <div style="width: 100%;">
+    <!-- <div style="width: 100%;">
       <x-rol gutter="30">
         <x-col span="12"
         :ipad="{span: 8}"
@@ -48,7 +48,7 @@
           <div class="donten"></div>
         </x-col>
       </x-rol>
-    </div>
+    </div> -->
 
     <!-- 布局 -->
     <!-- <x-layout>
@@ -61,14 +61,45 @@
       <x-footer class="demo"></x-footer>
     </x-layout> -->
 
+    <!-- Toast -->
+    <!-- <XButton @click="openToast">open</XButton> -->
 
-    <XButton @click="openToast">open</XButton>
+    <!-- Tabs -->
+  <x-tabs :selected.sync="selected">
+    <x-tabs-head>
+      <template slot="actions">
+        <x-button icon="settings">设置</x-button>
+      </template>
+      <x-tabs-item name="women" :disabled="true">
+        美女
+      </x-tabs-item>
+      <x-tabs-item name="finance" :disabled="false">
+        财经
+      </x-tabs-item>
+      <x-tabs-item name="sports">
+        体育
+      </x-tabs-item>
+    </x-tabs-head>
+    <x-tabs-body>
+       <x-tabs-pane name="women">
+         美女美女美女美女美女
+       </x-tabs-pane>
+       <x-tabs-pane name="finance">
+         财经财经财经财经财经
+       </x-tabs-pane>
+       <x-tabs-pane name="sports">
+         体育体育体育体育体育
+       </x-tabs-pane>
+    </x-tabs-body>
 
+  </x-tabs>
 
   </div>
 </template>
 
 <script>
+import XIcon from './icon/Icon'
+
 import XButton from './button/button'
 import XInput from './input/input'
 import XCol from './row/col'
@@ -80,15 +111,23 @@ import XSider from './layout/sider'
 import XContent from './layout/content'
 import XToast from './toast/toast'
 
+import XTabs from './tabs/tabs'
+import XTabsHead from './tabs/tabs-head'
+import XTabsBody from './tabs/tabs-body'
+import XTabsItem from './tabs/tabs-item'
+import XTabsPane from './tabs/tabs-pane'
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'To build the wheels',
-      value1: '张三a'
+      value1: '张三a',
+      selected: 'sports',
     }
   },
   components: {
+    XIcon,
     XButton,
     XInput,
     XCol,
@@ -98,9 +137,17 @@ export default {
     XFooter,
     XHeader,
     XLayout,
-    XToast
+    XToast,
+    XTabs,
+    XTabsHead,
+    XTabsBody,
+    XTabsItem,
+    XTabsPane
   },
   methods: {
+    // selecteTab() {
+
+    // },
     openToast(){
       this.$toast('hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world ', {
         closeButton: {

@@ -15,11 +15,9 @@
             }
         },
         mounted () {
-            console.log(this.$children)
             this.$children.forEach(item => {
-                console.log(item.$options.name)
                 if(item.$options.name =='x-sider') {
-                    this.layoutClass.hasSlider = true 
+                    this.layoutClass.hasSlider = true
                 }
             });
         }
@@ -30,7 +28,7 @@
 .layout{
     display: flex;
     flex-direction: column;
-    flex-grow: 1; 
+    flex-grow: 1;
     height: 100vh;
     &.hasSlider{
         flex-direction: row;
