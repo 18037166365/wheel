@@ -65,7 +65,7 @@
     <!-- <XButton @click="openToast">open</XButton> -->
 
     <!-- Tabs -->
-  <x-tabs :selected.sync="selected">
+  <!-- <x-tabs :selected.sync="selected">
     <x-tabs-head>
       <template slot="actions">
         <x-button icon="settings">设置</x-button>
@@ -91,8 +91,35 @@
          体育体育体育体育体育
        </x-tabs-pane>
     </x-tabs-body>
+  </x-tabs> -->
 
-  </x-tabs>
+<x-popover style="margin-top: 100px;" position="top" trigger="hover">
+    <div slot="content">
+      content content content content content content content content content content content content content content content content
+    </div>
+    <x-button>open top</x-button>
+  </x-popover>
+  <x-popover style="margin-top: 100px;" position="bottom">
+    <div slot="content">
+      content content content content content content content content content content content content content content content content
+    </div>
+    <x-button>open bottom</x-button>
+  </x-popover>
+  <x-popover style="margin-top: 100px;" position="left">
+    <div slot="content">
+      content content content content content content content content content content content content content content content content
+    </div>
+    <x-button>open</x-button>
+  </x-popover>
+
+  <x-popover style="margin-top: 100px;" position="right">
+    <div slot="content">
+      content content content content content content content content content content content content content content content content
+    </div>
+    <x-button>open right</x-button>
+  </x-popover>
+
+
 
   </div>
 </template>
@@ -116,6 +143,11 @@ import XTabsHead from './tabs/tabs-head'
 import XTabsBody from './tabs/tabs-body'
 import XTabsItem from './tabs/tabs-item'
 import XTabsPane from './tabs/tabs-pane'
+
+import XPopover from './popover/popover'
+
+
+
 
 export default {
   name: 'HelloWorld',
@@ -142,7 +174,8 @@ export default {
     XTabsHead,
     XTabsBody,
     XTabsItem,
-    XTabsPane
+    XTabsPane,
+    XPopover
   },
   methods: {
     // selecteTab() {
