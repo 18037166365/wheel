@@ -65,7 +65,7 @@
     <!-- <XButton @click="openToast">open</XButton> -->
 
     <!-- Tabs -->
-  <!-- <x-tabs :selected.sync="selected">
+  <x-tabs :selected.sync="selected">
     <x-tabs-head>
       <template slot="actions">
         <x-button icon="settings">设置</x-button>
@@ -91,9 +91,9 @@
          体育体育体育体育体育
        </x-tabs-pane>
     </x-tabs-body>
-  </x-tabs> -->
+  </x-tabs>
 
-<x-popover style="margin-top: 100px;" position="top" trigger="hover">
+<!-- <x-popover style="margin-top: 100px;" position="top" trigger="hover">
     <div slot="content">
       content content content content content content content content content content content content content content content content
     </div>
@@ -119,7 +119,14 @@
       content content content content content content content content content content content content content content content content
     </div>
     <x-button>open right</x-button>
-  </x-popover>
+  </x-popover> -->
+
+  <X-collapse :selected.sync="collapseSelected" :single="true">
+    <x-collapse-item title="标题1" name="1">内容1</x-collapse-item>
+    <x-collapse-item title="标题2" name="2">内容2</x-collapse-item>
+    <x-collapse-item title="标题3" name="3">内容3</x-collapse-item>
+  </X-collapse>
+  {{ collapseSelected}}
 
 
 
@@ -148,6 +155,10 @@ import XTabsPane from './tabs/tabs-pane'
 
 import XPopover from './popover/popover'
 
+import XCollapse from './collapse/collapse'
+import XCollapseItem from './collapse/collapse-item'
+
+
 
 
 
@@ -158,6 +169,7 @@ export default {
       msg: 'To build the wheels',
       value1: '张三a',
       selected: 'sports',
+      collapseSelected: ['2']
     }
   },
   components: {
@@ -177,7 +189,9 @@ export default {
     XTabsBody,
     XTabsItem,
     XTabsPane,
-    XPopover
+    XPopover,
+    XCollapse,
+    XCollapseItem
   },
   methods: {
     // selecteTab() {
