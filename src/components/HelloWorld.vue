@@ -100,7 +100,8 @@
     <x-button>open top</x-button>
   </x-popover>
   <x-popover style="margin-top: 100px;" position="bottom">
-    <div slot="content">
+    <div slot="content" slot-scope="slotProps">
+      <x-button @click="slotProps.close">close</x-button>
       content content content content content content content content content content content content content content content content
     </div>
     <x-button>open bottom</x-button>
@@ -114,6 +115,7 @@
 
   <x-popover style="margin-top: 100px;" position="right">
     <div slot="content">
+      <a href="#">313aaaaaaa</a>
       content content content content content content content content content content content content content content content content
     </div>
     <x-button>open right</x-button>

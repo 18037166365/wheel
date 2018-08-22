@@ -35,7 +35,6 @@
     methods: {
       handleClick() {
         if(this.disabled) return
-        console.log(this.eventBus)
         // this.$emit('click', this)
         this.eventBus && this.eventBus.$emit('update:selected', this.name, this)
       }

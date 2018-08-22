@@ -96,7 +96,6 @@ describe('Tabs', ()=> {
 
       var callback = sinon.spy(vm, 'handleClick');
         const clickEvent = new window.Event('click');
-        console.log( vm.$el.querySelector('.tabs-item'))
         vm.$el.dispatchEvent(clickEvent);
         setTimeout(()=>{
           expect(vm.$el.classList.contains('active')).to.be.false
@@ -104,41 +103,5 @@ describe('Tabs', ()=> {
         },1000)
         vm.$destroy()
     })
-
-    // it('接受 disabled 参数 false', ()=> {
-    //   const Constructor= Vue.extend(XTabsItem)
-    //   const vm = new Constructor({
-    //     propsData: {
-    //       name: 'xxx',
-    //       disabled: false
-    //     }
-    //   }).$mount()
-    //   expect(vm.$el.classList.contains('disabled')).to.be.false
-
-    //   var callback = sinon.spy(vm, 'handleClick');
-    //     const clickEvent = new window.Event('click');
-    //     console.log( vm.$el.querySelector('.tabs-item'))
-    //     vm.$el.dispatchEvent(clickEvent);
-    //     sinon.assert.calledOnce(callback)
-    //     vm.$destroy()
-    // })
   })
-
-
-
-  // it('接收span', ()=>{
-  //    const Constructor = Vue.extend(Col)
-  //    const div = document.createElement('div')
-  //   document.body.appendChild(div)
-  //   const vm = new Constructor({
-  //     propsData: {
-  //       span: 1
-  //     }
-  //   }).$mount(div)
-  //   const element = vm.$el
-  //   expect(element.classList.contains('col-1')).to.eq(true)
-  //   vm.$el.remove()
-  //   vm.$destroy()
-  // })
-
 })

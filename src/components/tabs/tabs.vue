@@ -37,7 +37,7 @@ import Vue from 'vue'
         if(vm.$options.name == 'xTabsHead'){
           vm.$children.forEach(item=> {
             if(item.$options.name === 'xTabsItem' && item.name===this.selected) {
-              this.eventBus.$emit('update:selected', this.selected, item)
+              this.eventBus && this.eventBus.$emit('update:selected', this.selected, item)
             }
           })
         }

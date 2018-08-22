@@ -1,7 +1,7 @@
 <template>
   <div class="popover"  ref="popover">
     <div ref="contentWrapper" v-if="visible" class="content-wrapper" :class="{[`position-${position}`]:true}">
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWraper" class="triggerWraper">
       <slot></slot>
@@ -73,7 +73,7 @@
         }
         document.addEventListener('click', this.enentHandle)
       },
-      onShow () {
+      open () {
         this.visible = true
         this.$nextTick(()=> {
           this.positionContent()
@@ -90,26 +90,10 @@
         if(this.$refs.triggerWraper.contains(event.target)) {
           console.log('点击了按钮')
           if(this.visible == false) {
-            this.onShow()
+            this.open()
           }else{
             this.close()
           }
-        }
-      }
-    },
-    computed: {
-      openEvent () {
-        if (this.trigger === 'click') {
-          return 'click'
-        } else {
-          return 'mouseenter'
-        }
-      },
-      closeEvent () {
-        if (this.trigger === 'click') {
-          return 'click'
-        } else {
-          return 'mouseleave'
         }
       }
     },
@@ -118,15 +102,16 @@
         this.$refs.popover.addEventListener('click', this.handle)
       }else {
         this.$refs.popover.addEventListener('mouseenter', this.open)
-        this.$refs.popover.addEventListener('mouseleaver', this.close)
+        this.$refs.popover.addEventListener('mouseleave', this.close)
       }
+      console.log(this.trigger.eventList)
     },
     destroyed() {
        if(this.trigger == 'click') {
         this.$refs.popover.removeEventListener('click', this.handle)
       }else {
         this.$refs.popover.removeEventListener('mouseenter', this.open)
-        this.$refs.popover.removeEventListener('mouseleaver', this.close)
+        this.$refs.popover.removeEventListener('mouseleave', this.close)
       }
     }
   }
