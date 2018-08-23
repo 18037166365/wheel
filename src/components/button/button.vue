@@ -1,8 +1,8 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]: true}"
     @click="$emit('click')">
-    <g-icon class="icon" v-if="icon && !loading" :name="icon"/>
-    <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
+    <x-icon class="icon" v-if="icon && !loading" :name="icon"/>
+    <x-icon class="loading icon" v-if="loading" name="loading1"></x-icon>
     <div class="g-button-content">
       <slot/>
     </div>
@@ -12,11 +12,11 @@
   </button> -->
 </template>
 <script>
-  import Icon from '../icon/Icon'
+  import XIcon from '../icon/Icon'
   export default {
     name: 'GuluButton',
     components: {
-      'g-icon': Icon
+      XIcon
     },
     props: {
       icon: {},
@@ -56,7 +56,7 @@
       > .icon { order: 2; margin-right: 0; margin-left: .1em;}
     }
     .loading {
-      animation: spin 2s infinite linear;
+      animation: spin 3s infinite linear;
     }
   }
 </style>

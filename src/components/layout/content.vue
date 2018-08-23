@@ -1,4 +1,4 @@
- <template>
+ <template class="layout-wrapper">
     <div class="content">
         <slot></slot>
     </div>
@@ -11,7 +11,12 @@
 </script>
 
 <style lang="scss" scoped>
-.content{
+.layout-wrapper{
+    color:red;
+  .content{
     flex-grow: 1;
+    margin: 0;
+  }
 }
+
 </style> 

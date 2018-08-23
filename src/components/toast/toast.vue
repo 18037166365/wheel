@@ -12,10 +12,6 @@
 </template>
 
 <script>
-// import Vue from 'vue'
-// Vue.prototype.$toast = ()=>{
-//   alert('Toast')
-// }
   export default {
     name: 'x-toast',
     props: {
@@ -68,7 +64,9 @@
         let delay;
         if(typeof this.autoClose ==='number') {
           delay = this.autoClose
-        }else {
+        }else if(this.autoClose === false){
+          return
+        }else{
           delay = 1.5
         }
         setTimeout(()=>{
@@ -114,6 +112,7 @@ $animation-duration: 500ms;
   100%{transform: translateY(0%)}
 }
 .toastWrap {
+  z-index: 99999;
   .toastContent {
     animation: fade 1s;
     position: fixed;
@@ -156,6 +155,7 @@ $animation-duration: 500ms;
       left: 0;
       border-radius: 0;
       animation: slideBottom $animation-duration;
+      z-index: 9999;
     }
     &.toast-position-middle{
       animation: fadeIn $animation-duration;

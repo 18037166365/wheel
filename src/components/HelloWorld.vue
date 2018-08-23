@@ -1,7 +1,10 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <!-- <XButton icon="settings">shehi</XButton> -->
+    <!-- <x-icon class="icon" name="settings"/>
+    <x-icon name="loading1"/> -->
+    <!-- <XButton icon="settings">shehi</XButton>
+    <XButton :loading="true">shehi</XButton> -->
     <!-- INPUT -->
     <!-- <h2>{{ value1 }}</h2>
     <XInput :value="value1"
@@ -62,7 +65,7 @@
     </x-layout> -->
 
     <!-- Toast -->
-    <!-- <XButton @click="openToast">open</XButton> -->
+    <XButton @click="openToast">open</XButton>
 
     <!-- Tabs -->
   <x-tabs :selected.sync="selected">
@@ -121,12 +124,11 @@
     <x-button>open right</x-button>
   </x-popover> -->
 
-  <X-collapse :selected.sync="collapseSelected" :single="true">
+  <!-- <X-collapse :selected.sync="collapseSelected" :single="true">
     <x-collapse-item title="标题1" name="1">内容1</x-collapse-item>
     <x-collapse-item title="标题2" name="2">内容2</x-collapse-item>
     <x-collapse-item title="标题3" name="3">内容3</x-collapse-item>
-  </X-collapse>
-  {{ collapseSelected}}
+  </X-collapse> -->
 
 
 
@@ -198,7 +200,7 @@ export default {
 
     // },
     openToast(){
-      this.$toast('hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world ', {
+      this.$toast(' hello world ', {
         closeButton: {
           text: '关闭',
           callBack(toast) {//可以调用toast组件实例
@@ -206,7 +208,7 @@ export default {
           }
         },
         position: 'top',
-        autoClose: true,//默认为1.5s
+        autoClose: false,//默认为1.5s
         enableHtml: false
       })
     },

@@ -7,7 +7,7 @@
   import './svg'
 
   export default {
-    name: 'VIcon',
+    name: 'XIcon',
     props: ['name']
   }
 </script>
