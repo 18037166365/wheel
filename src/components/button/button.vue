@@ -12,7 +12,7 @@
   </button> -->
 </template>
 <script>
-  import XIcon from '../icon/Icon'
+  import XIcon from '../icon/icon'
   export default {
     name: 'GuluButton',
     components: {

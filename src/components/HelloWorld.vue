@@ -136,7 +136,7 @@
 </template>
 
 <script>
-import XIcon from './icon/Icon'
+import XIcon from './icon/icon'
 
 import XButton from './button/button'
 import XInput from './input/input'

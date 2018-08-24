@@ -1,6 +1,6 @@
 module.exports = {
-  base: '/wheel/ ',
-  title: 'X - UI ',
+  base: '/wheel/',
+  title: 'X - UI',
   description: '一个超赞的 UI 框架',
   themeConfig: {
     nav: [

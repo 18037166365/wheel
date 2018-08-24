@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import VIcon from '../icon/Icon'
+import VIcon from '../icon/icon'
 
   export default {
     nane: 'x-input',
