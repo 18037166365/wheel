@@ -65,10 +65,10 @@
     </x-layout> -->
 
     <!-- Toast -->
-    <XButton @click="openToast">open</XButton>
+    <!-- <XButton @click="openToast">open</XButton> -->
 
     <!-- Tabs -->
-  <x-tabs :selected.sync="selected">
+  <!-- <x-tabs :selected.sync="selected">
     <x-tabs-head>
       <template slot="actions">
         <x-button icon="settings">设置</x-button>
@@ -94,7 +94,7 @@
          体育体育体育体育体育
        </x-tabs-pane>
     </x-tabs-body>
-  </x-tabs>
+  </x-tabs> -->
 
 <!-- <x-popover style="margin-top: 100px;" position="top" trigger="hover">
     <div slot="content">
@@ -130,6 +130,9 @@
     <x-collapse-item title="标题3" name="3">内容3</x-collapse-item>
   </X-collapse> -->
 
+  <x-cascader :source="cascaderDatea">
+cascader
+  </x-cascader>
 
 
   </div>
@@ -160,6 +163,9 @@ import XPopover from './popover/popover'
 import XCollapse from './collapse/collapse'
 import XCollapseItem from './collapse/collapse-item'
 
+import XCascader from './cascader/cascader'
+
+
 
 
 
@@ -171,7 +177,43 @@ export default {
       msg: 'To build the wheels',
       value1: '张三a',
       selected: 'sports',
-      collapseSelected: ['2']
+      collapseSelected: ['2'],
+      cascaderDatea: [
+        {
+          name: '浙江',
+          children: [
+            {
+              name: '杭州',
+              children: [
+                {name: '西湖区'},
+                {name: '萧山区'},
+              ]
+            },
+            {
+              name: '金华'
+            }
+          ]
+        },
+        {
+          name: '河南',
+          children: [
+            {
+              name: '郑州',
+              children: [
+                {name: '金水区'},
+                {name: '郑东新区'},
+              ]
+            },
+            {
+              name: '开封',
+              children: [
+                {name: '开封区1'},
+                {name: '开封区2'},
+              ]
+            }
+          ]
+        }
+      ]
     }
   },
   components: {
@@ -193,7 +235,8 @@ export default {
     XTabsPane,
     XPopover,
     XCollapse,
-    XCollapseItem
+    XCollapseItem,
+    XCascader
   },
   methods: {
     // selecteTab() {
