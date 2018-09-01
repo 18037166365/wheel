@@ -130,10 +130,9 @@
     <x-collapse-item title="标题3" name="3">内容3</x-collapse-item>
   </X-collapse> -->
 
-  <x-cascader :source="cascaderDatea">
-cascader
+  {{selected}}
+  <x-cascader :selected.sync="selected" :source="cascaderDatea" popover-height="200px">
   </x-cascader>
-
 
   </div>
 </template>
@@ -178,6 +177,7 @@ export default {
       value1: '张三a',
       selected: 'sports',
       collapseSelected: ['2'],
+      selected: [],
       cascaderDatea: [
         {
           name: '浙江',
@@ -326,5 +326,8 @@ a {
 }
 .row{
   margin-bottom: 20px;
+}
+.popoverClassName{
+  height: 200px;
 }
 </style>
