@@ -130,9 +130,12 @@
     <x-collapse-item title="标题3" name="3">内容3</x-collapse-item>
   </X-collapse> -->
 
-  {{selected}}
-  <x-cascader :selected.sync="selected" :source="cascaderDatea" popover-height="200px">
+  <!-- {{selected}} -->
+  <x-cascader :selected.sync="selected" :load="loadNode" :source.sync="sourceDatea" popover-height="200px">
   </x-cascader>
+   <!-- <x-cascader :selected.sync="selected"
+    :source.sync="sourceDatea" popover-height="200px">
+  </x-cascader> -->
 
   </div>
 </template>
@@ -164,21 +167,9 @@ import XCollapseItem from './collapse/collapse-item'
 
 import XCascader from './cascader/cascader'
 
+import db from '@/assets/js/db.js';
 
-
-
-
-
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'To build the wheels',
-      value1: '张三a',
-      selected: 'sports',
-      collapseSelected: ['2'],
-      selected: [],
-      cascaderDatea: [
+const cityData= [
         {
           name: '浙江',
           children: [
@@ -214,6 +205,32 @@ export default {
           ]
         }
       ]
+
+function promise(parentId=0) {
+  return new Promise((resolve, reject)=> {
+    let result =  db.filter((item)=> {
+      return item.parent_id == parentId
+    })
+    result.map((node)=> {
+      let list = db.filter(item=> item.parent_id === node.id)
+          node.isLeaf = list.length==0?true: false
+    })
+    setTimeout(()=> {
+      resolve(result)
+    },1000)
+  })
+}
+
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'To build the wheels',
+      value1: '张三a',
+      selected: 'sports',
+      collapseSelected: ['2'],
+      selected: [],
+      sourceDatea: []
     }
   },
   components: {
@@ -239,9 +256,16 @@ export default {
     XCascader
   },
   methods: {
-    // selecteTab() {
-
-    // },
+    loadNode(node, resolve) {
+      let {name, id, parent_id, children} = node
+      if(children!=undefined) {
+        return
+      }
+      promise(id).then((res)=> {
+        console.log('loadNdoe')
+        resolve(res)
+      })
+    },
     openToast(){
       this.$toast(' hello world ', {
         closeButton: {
@@ -273,7 +297,13 @@ export default {
     },
   },
   mounted(){
+    promise().then(res=>{
+      console.log(res)
+      this.sourceDatea =res
+      // this.sourceDatea =cityData
 
+    })
+    console.log(this.sourceDatea)
   }
 }
 </script>
