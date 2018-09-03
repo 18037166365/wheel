@@ -141,7 +141,7 @@
 </template>
 
 <script>
-import XIcon from '@/components/icon/icon'
+import XIcon from '@/components/xicon/xicon'
 import XButton from './button/button'
 import XInput from './input/input'
 import XCol from './row/col'

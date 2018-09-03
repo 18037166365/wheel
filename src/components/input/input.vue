@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import XIcon from '@/components/icon/icon'
+import XIcon from '@/components/xicon/xicon'
 
   export default {
     nane: 'x-input',

@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import Icon from '@/components/icon/icon'
-import CIcon from '../icon/icon'
+import Icon from '@/components/xicon/xicon'
+import CIcon from '../xicon/xicon'
 
   export default {
     name: 'XCascaderItem',

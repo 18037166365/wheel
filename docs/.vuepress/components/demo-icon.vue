@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import XIcon from '../../../src/components/icon/icon'
+import XIcon from '../../../src/components/xicon/xicon'
 
   export default {
     components: {

@@ -12,7 +12,9 @@
   </button> -->
 </template>
 <script>
-import XIcon from '@/components/icon/icon'
+import HelloWorld from '@/components/HelloWorld'
+
+import XIcon from '@/components/xicon/xicon'
 
   export default {
     name: 'GuluButton',
