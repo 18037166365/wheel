@@ -20,7 +20,6 @@
 
 <script>
 import Icon from '@/components/xicon/xicon'
-import CIcon from '../xicon/xicon'
 
   export default {
     name: 'XCascaderItem',
@@ -49,7 +48,6 @@ import CIcon from '../xicon/xicon'
     },
     components: {
       Icon,
-      CIcon
     },
     computed: {
       rightItems() {

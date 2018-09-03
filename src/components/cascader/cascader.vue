@@ -6,13 +6,11 @@
     <div class="popover-wraper" v-show="popoverVisible" ref="popoverWraper">
       <cascader-item :selected="selected" :items="source" :loading-item="loadingItem" :load="load" @update:selected="onUpdateSelected" class="popover" :height="popoverHeight" :style="{'height': popoverHeight}">
       </cascader-item>
-      <x-input></x-input>
     </div>
   </div>
 </template>
 
 <script>
-import XInput from '@/components/input/input'
 import cascaderItem from './cascader-item';
 import ClickOutside from './direction.js'
 
@@ -20,7 +18,6 @@ import ClickOutside from './direction.js'
     name: 'XCascader',
     components: {
       cascaderItem,
-      XInput
     },
     directives: {
       ClickOutside
