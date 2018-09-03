@@ -10,19 +10,19 @@
      type="text"
     >
     <template v-if="error">
-      <v-icon name="info2" class="icon-error" />
+      <x-icon name="info2" class="icon-error" />
       <span class="error-message">{{error}}</span>
     </template>
   </div>
 </template>
 
 <script>
-import VIcon from '../icon/icon'
+import XIcon from '@/components/icon/icon'
 
   export default {
     nane: 'x-input',
     components: {
-      VIcon
+      XIcon
     },
     props: {
       value: {
