@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import XInput from '@/components/input/input'
 import Icon from '@/components/icon/icon'
 import CIcon from '../icon/icon'
 
@@ -50,7 +49,6 @@ import CIcon from '../icon/icon'
     },
     components: {
       Icon,
-      XInput,
       CIcon
     },
     computed: {
