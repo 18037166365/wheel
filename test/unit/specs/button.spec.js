@@ -10,7 +10,7 @@ describe('Button', () => {
     expect(Button).to.exist
   })
 
-  it('可以设置icon', ()=> {
+  #it('可以设置icon', ()=> {
     const wrapper = mount(Button, {
       propsData: {
         icon: 'loading'
