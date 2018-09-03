@@ -19,7 +19,9 @@
 </template>
 
 <script>
+import XInput from '@/components/input/input'
 import Icon from '@/components/icon/icon'
+import CIcon from '../icon/icon'
 
   export default {
     name: 'XCascaderItem',
@@ -47,7 +49,9 @@ import Icon from '@/components/icon/icon'
       }
     },
     components: {
-      Icon
+      Icon,
+      XInput,
+      CIcon
     },
     computed: {
       rightItems() {
