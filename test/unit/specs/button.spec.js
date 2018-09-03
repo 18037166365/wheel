@@ -10,13 +10,13 @@ describe('Button', () => {
     expect(Button).to.exist
   })
 
-  #it('可以设置icon', ()=> {
-    const wrapper = mount(Button, {
-      propsData: {
-        icon: 'loading'
-      }
-    })
-    const useElement = wrapper.find('use')
-    expect(useElement.attributes()['href']).to.equal('#i-loading')
-  })
+  // it('可以设置icon', ()=> {
+  //   const wrapper = mount(Button, {
+  //     propsData: {
+  //       icon: 'loading'
+  //     }
+  //   })
+  //   const useElement = wrapper.find('use')
+  //   expect(useElement.attributes()['href']).to.equal('#i-loading')
+  // })
 })
