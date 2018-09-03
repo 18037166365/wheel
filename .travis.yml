@@ -1,29 +1,10 @@
-# language: node_js
-# node_js:
-#   - "8"
-# addons:
-#   chrome: stable
-# sudo: required
-
-# cache:
-#   directories:
-#     - node_modules
-
-
-# # S: Build Lifecycle
-# install:
-#   - npm install
-
-# before_script:
-#   - "sudo chown root /opt/google/chrome/chrome-sandbox"
-#   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
-
 language: node_js
-# nodejs版本
 node_js:
-    - '6'
+  - "8"
+addons:
+  chrome: stable
+sudo: required
 
-# Travis-CI Caching
 cache:
   directories:
     - node_modules
@@ -34,10 +15,29 @@ install:
   - npm install
 
 before_script:
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
-# 无其他依赖项所以执行npm run build 构建就行了
-script:
-  - npm run build
-branches:
-  only:
-    - master
+# language: node_js
+# # nodejs版本
+# node_js:
+#     - '8'
+
+# # Travis-CI Caching
+# cache:
+#   directories:
+#     - node_modules
+
+
+# # S: Build Lifecycle
+# install:
+#   - npm install
+
+# before_script:
+
+# # 无其他依赖项所以执行npm run build 构建就行了
+# script:
+#   - npm run build
+# branches:
+#   only:
+#     - master
