@@ -1,3 +1,5 @@
+
+[![Build Status](https://travis-ci.com/18037166365/wheel.svg?branch=master)](https://travis-ci.com/18037166365/wheel)
 # wheel
 
 > A Vue.js project
